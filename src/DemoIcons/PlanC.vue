@@ -1,3 +1,21 @@
+<script>
+// 第一步：引入图标
+import '@ks/kw/icon/output/common/iconfont.css';
+import IconFont from '@ks/kw/icon/output/common/iconfont.vue';
+
+// 第二步（可选）：引入颜色
+import '@ks/kwcolor/color/output/all/index.css';
+import * as colors from '@ks/kwcolor/color/output/all/index.v2.js';
+
+/* 方案C：iconfont 方案，不推荐使用 */
+export default {
+  color_base_black_1: colors.color_base_black_1,
+  components: {
+    IconFont
+  }
+};
+</script>
+
 <template>
   <IconFont icon="common_base_like_24" class="hello" />
   <IconFont
@@ -7,23 +25,6 @@
   />
 </template>
 
-<script>
-// 第一步：引入图标
-import '@ks/kw/icon/output/common/iconfont.css';
-import IconFont from '@ks/kw/icon/output/common/iconfont.vue';
-
-// 第二步（可选）：引入颜色
-import '@ks/kwcolor/color/output/all/index.css';
-import { color_base_black_1 } from '@ks/kwcolor/color/output/all/index.v2.js';
-
-/* 方案C：iconfont 方案，不推荐使用 */
-export default {
-  color_base_black_1,
-  components: {
-    IconFont
-  }
-};
-</script>
 
 <style lang="less" scoped>
 @import '@ks/kwcolor/color/output/all/index.less';

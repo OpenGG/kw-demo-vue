@@ -1,32 +1,28 @@
-<script>
-import PlanA from './PlanA.vue';
-import PlanB from './PlanB.vue';
-import PlanC from './PlanC.vue';
+<script setup>
+import { onMounted, ref } from 'vue';
+import PlanA3 from './PlanA3.vue';
+import PlanB3 from './PlanB3.vue';
+import PlanC3 from './PlanC3.vue';
 import PlanCDom from './PlanCDom.ts';
 
-export default {
-  components: {
-    PlanA,
-    PlanB,
-    PlanC
-  },
-  mounted() {
-    PlanCDom(this.$refs.refDom);
-  }
-};
+const refDom = ref(null)
+
+onMounted(() => {
+  PlanCDom(refDom.value);
+})
 </script>
 
 <template>
   <div>
-    <h1>图标演示 Vue2</h1>
+    <h1>图标演示 Vue3</h1>
     <h2>方案A：基于方案 B 改进，支持自动裁剪，推荐使用</h2>
-    <PlanA />
+    <PlanA3 />
 
     <h2>方案B：散图引用，推荐使用</h2>
-    <PlanB />
+    <PlanB3 />
 
     <h2>方案C：iconfont 方案，不推荐使用</h2>
-    <PlanC />
+    <PlanC3 />
 
     <div ref="refDom" />
   </div>

@@ -1,7 +1,7 @@
 // 引入图标
 import '@ks/kw/icon/output/all/iconfont.css';
 
-export default (parent) => {
+export default (parent: HTMLDivElement) => {
   const div = document.createElement('div');
 
   div.innerHTML = `
@@ -12,12 +12,12 @@ export default (parent) => {
 </style>
 <h2>方案C：iconfont 方案，不推荐使用</h2>
 <p>没使用 React/vue，直接渲染 span </p>
-<span 
-  aria-hidden="true" 
+<span
+  aria-hidden="true"
   class="
     hello-world
-    iconfont-all 
-    icon-common_base_like_24 
+    iconfont-all
+    icon-common_base_like_24
     icon-common_base_like_24-dual
   "
   style="color: var(--color_base_black_1)"

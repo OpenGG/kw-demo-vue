@@ -4,10 +4,13 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    hmr: {
-      port: 443
-    }
+  // server: {
+  //   hmr: {
+  //     port: 443
+  //   }
+  // },
+  build: {
+    minify: false,
   },
   plugins: [vue()],
   resolve: {
