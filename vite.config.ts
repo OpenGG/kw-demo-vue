@@ -13,9 +13,6 @@ const server = isCodeSandbox && {
 // https://vitejs.dev/config/
 export default defineConfig({
   server,
-  build: {
-    minify: false,
-  },
   plugins: [vue()],
   resolve: {
     alias: {
