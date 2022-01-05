@@ -17,16 +17,20 @@ export default {
 
 <template>
   <!--
-    config:
-      传入具体的图标模块，这样可以做到仅打包所使用的图标，避免冗余
-
-    size:
-      图标尺寸
-      可以在 app.css 中统一设好 .svgfont{} 规则
-      也可以调用组建时传入 size
-
-    color:
-      手动设置 color ，会覆盖掉图标本身颜色
+   /*
+    * config:
+    *   必填
+    *   图标模块
+    * size:
+    *   * 可选
+    *   图标尺寸
+    *   可以在 app.css 中统一设好 .svgfont{ width: 40px; height: 40px; } 规则
+    *   也可以调用组建时传入 size
+    * color:
+    *   * 可选
+    *   颜色
+    *   手动设置 color ，会覆盖掉图标本身颜色
+    */
   -->
   <Icon :config="$options.common_base_like_24" :size="40" class="hello" />
 
@@ -34,6 +38,11 @@ export default {
     :config="$options.common_base_like_24"
     :size="30"
     :color="$options.color_base_black_1"
+    class="hello"
+  />
+
+  <IconLight
+    :config="$options.common_base_like_24"
     class="hello1"
   />
 </template>

@@ -32,6 +32,11 @@ import {
     :config="common_base_like_24"
     :size="30"
     :color="color_base_black_1"
+    class="hello"
+  />
+
+  <IconLight
+    :config="common_base_like_24"
     class="hello1"
   />
 </template>

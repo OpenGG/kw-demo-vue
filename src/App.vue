@@ -51,4 +51,9 @@ h2 {
   font-size: 18px;
   line-height: 1.2;
 }
+
+.svgfont {
+  width: 20px;
+  height: 20px;
+}
 </style>

@@ -34,6 +34,11 @@ export default {
     :config="$options.common_base_like_24"
     :size="30"
     :color="$options.color_base_black_1"
+    class="hello"
+  />
+
+  <IconLight
+    :config="$options.common_base_like_24"
     class="hello1"
   />
 </template>
