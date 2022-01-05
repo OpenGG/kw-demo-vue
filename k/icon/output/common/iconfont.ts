@@ -9,7 +9,7 @@ type IKey = "common_base_like_24"
 export interface IProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'size'> {
     icon: IKey
     darkMode?: Boolean
-    size?: string
+    size?: string | number
     color?: string
 }
 

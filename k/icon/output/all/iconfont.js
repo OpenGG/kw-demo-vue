@@ -17,7 +17,7 @@ const iconStyle = (size, color, style) => {
     return Object.assign(res, style);
 };
 const IconFont = ({ className, icon, darkMode = true, size, color, style, ...props }) => React.createElement('span', {
-    className: classnames('iconfont-common', `icon-${icon}`, darkMode ? `icon-${icon}-dual` : '', className),
+    className: classnames('iconfont-all', `icon-${icon}`, darkMode ? `icon-${icon}-dual` : '', className),
     'aria-hidden': 'true',
     style: iconStyle(size, color, style),
     ...props
