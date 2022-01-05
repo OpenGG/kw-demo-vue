@@ -6,15 +6,12 @@
     :class="[id, darkMode ? `${id}-dual` : '']"
     aria-hidden="true"
     focusable="false"
+    :style="size ? { width: `${size}px`, height: `${size}px` } : null"
   >
     <use :xlink:href="`#${id}`" />
   </svg>
   <picture v-else>
-    <source
-      v-if="darkMode && config[2]"
-      :srcset="config[2]"
-      media="(prefers-color-scheme: dark)"
-    />
+    <source v-if="darkMode && config[2]" :srcset="config[2]" media="(prefers-color-scheme: dark)" />
     <img class="svgfont" :class="id" aria-hidden="true" :src="config[1] || config[2]" />
   </picture>
 </template>
@@ -28,41 +25,41 @@ let rootSVG;
 let rootSheet;
 let rootRuleMedia;
 const getRootRules = () => {
-    if (!rootSheet) {
-        const rootStyle = document.createElement('style');
-        rootStyle.textContent = '.kid-root-svg{position:absolute;width:0px;height:0px;overflow:hidden}.svgfont{fill:currentColor}@media(prefers-color-scheme:dark){}';
-        (document.head || document.documentElement).appendChild(rootStyle);
-        rootSheet = rootStyle.sheet;
-        rootRuleMedia = rootSheet.cssRules[rootSheet.cssRules.length - 1];
-    }
-    return [rootSheet, rootSheet.cssRules.length - 1, rootRuleMedia, rootRuleMedia.cssRules.length];
+  if (!rootSheet) {
+    const rootStyle = document.createElement('style');
+    rootStyle.textContent = '.kid-root-svg{position:absolute;width:0px;height:0px;overflow:hidden}.svgfont{fill:currentColor}@media(prefers-color-scheme:dark){}';
+    (document.head || document.documentElement).appendChild(rootStyle);
+    rootSheet = rootStyle.sheet;
+    rootRuleMedia = rootSheet.cssRules[rootSheet.cssRules.length - 1];
+  }
+  return [rootSheet, rootSheet.cssRules.length - 1, rootRuleMedia, rootRuleMedia.cssRules.length];
 };
 const getRootSVG = () => {
-    if (rootSVG) {
-        return rootSVG;
-    }
-    rootSVG = document.createElement('svg');
-    rootSVG.className = 'kid-root-svg';
-    rootSVG.setAttribute('aria-hidden', 'true');
-    (document.body || document.documentElement).appendChild(rootSVG);
+  if (rootSVG) {
     return rootSVG;
+  }
+  rootSVG = document.createElement('svg');
+  rootSVG.className = 'kid-root-svg';
+  rootSVG.setAttribute('aria-hidden', 'true');
+  (document.body || document.documentElement).appendChild(rootSVG);
+  return rootSVG;
 };
 const injectSymbol = (id, config) => {
-    if (document.getElementById(id)) {
-        return;
-    }
-    const root = getRootSVG();
-    const [sheet, sheetInsertAt, ruleMedia, ruleMediaInsertAt] = getRootRules();
-    const [, , content, colorLight, colorDark] = config;
-    const el = document.createElementNS(xmlns, 'symbol');
-    el.setAttribute('viewBox', '0 0 1024 1024');
-    el.id = id;
-    el.innerHTML = content;
-    root.appendChild(el);
-    sheet.insertRule(`.${id}{color:${colorLight}}`, sheetInsertAt);
-    if (colorDark) {
-        ruleMedia.insertRule(`.${id}-dual{color:${colorDark}}`, ruleMediaInsertAt);
-    }
+  if (document.getElementById(id)) {
+    return;
+  }
+  const root = getRootSVG();
+  const [sheet, sheetInsertAt, ruleMedia, ruleMediaInsertAt] = getRootRules();
+  const [, , content, colorLight, colorDark] = config;
+  const el = document.createElementNS(xmlns, 'symbol');
+  el.setAttribute('viewBox', '0 0 1024 1024');
+  el.id = id;
+  el.innerHTML = content;
+  root.appendChild(el);
+  sheet.insertRule(`.${id}{color:${colorLight}}`, sheetInsertAt);
+  if (colorDark) {
+    ruleMedia.insertRule(`.${id}-dual{color:${colorDark}}`, ruleMediaInsertAt);
+  }
 };
 export default {
   props: {
@@ -73,6 +70,10 @@ export default {
     darkMode: {
       type: Boolean,
       default: true,
+    },
+    size: {
+      type: Number,
+      default: 0,
     },
   },
   computed: {

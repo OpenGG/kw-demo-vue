@@ -7,6 +7,8 @@ const IconFont = ({
     className,
     icon,
     darkMode = true,
+    size = 0,
+    style,
     ...props
 }) => React.createElement(
     'span',
@@ -18,6 +20,7 @@ const IconFont = ({
             className
         ),
         'aria-hidden': 'true',
+        style: size ? { fontSize: `${size}px`, ...style } : style,
         ...props
     }
 )

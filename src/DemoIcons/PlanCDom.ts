@@ -20,7 +20,7 @@ export default (parent: HTMLDivElement) => {
     icon-common_base_like_24
     icon-common_base_like_24-dual
   "
-  style="color: var(--color_base_black_1)"
+  style="font-size: 40px; color: var(--color_base_black_1)"
 ></span>`;
 
   parent.appendChild(div);

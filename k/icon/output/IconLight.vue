@@ -1,5 +1,5 @@
 <template>
-  <Icon :config="config" :darkMode="false" />
+  <Icon :config="config" :darkMode="false" :size="size" />
 </template>
 <script>
 // @ts-nocheck
@@ -12,6 +12,10 @@ export default {
       type: Array,
       required: true,
     },
+    size: {
+      type: Number,
+      default: 0,
+    }
   },
   components: {
     Icon,

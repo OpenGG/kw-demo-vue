@@ -16,17 +16,19 @@ type Icon = (number | string)[] // IconConfigSVG | IconConfigPng
 type IconPngBaseProps = React.HTMLProps<HTMLSpanElement> & React.HTMLProps<HTMLImageElement>
 
 interface IconPngProps extends IconPngBaseProps {
-  config: Icon
+  config?: Icon
   darkMode?: boolean
+  size?: number
 }
 
 interface IconSVGProps extends React.SVGProps<SVGSVGElement> {
-  config: Icon
+  config?: Icon
   darkMode?: boolean
   className?: string
+  size?: number
 }
 
-type IconProps = IconSVGProps & IconPngProps
+export type IconProps = IconSVGProps & IconPngProps
 
 const xmlns = 'http://www.w3.org/2000/svg'
 
@@ -82,6 +84,8 @@ const IconSVG = ({
   config,
   darkMode = true,
   className,
+  size,
+  style,
   ...props
 }: IconSVGProps) => {
   const configSVG = config as IconConfigSVG
@@ -92,11 +96,18 @@ const IconSVG = ({
     injectSymbol(id, configSVG)
   }, [id, configSVG])
 
+  const sizeStyle = size ? {
+    width: `${size}px`,
+    height: `${size}px`,
+    ...style,
+  } : style
+
   return React.createElement(
     'svg', {
     xmlns,
     className: classnames('svgfont', id, (darkMode && colorDark) ? `${id}-dual` : '', className),
     'aria-hidden': 'true',
+    style: sizeStyle,
     ...props
   },
     React.createElement(

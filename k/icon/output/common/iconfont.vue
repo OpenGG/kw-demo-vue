@@ -6,8 +6,10 @@
       `icon-${icon}`,
       darkMode ? `icon-${icon}-dual` : '',
     ]"
-    ><slot
-  /></span>
+    :style="size ? { fontSize: `${size}px` } : null"
+  >
+    <slot />
+  </span>
 </template>
 
 <script>
@@ -24,6 +26,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    size: {
+      type: Number,
+      default: 0,
+    }
   },
 };
 </script>

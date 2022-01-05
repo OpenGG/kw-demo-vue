@@ -45,17 +45,23 @@ const injectSymbol = (id, config) => {
         ruleMedia.insertRule(`.${id}-dual{color:${colorDark}}`, ruleMediaInsertAt);
     }
 };
-const IconSVG = ({ config, darkMode = true, className, ...props }) => {
+const IconSVG = ({ config, darkMode = true, className, size, style, ...props }) => {
     const configSVG = config;
     const [, k, , , colorDark] = configSVG;
     const id = `svg-${k}`;
     useEffect(() => {
         injectSymbol(id, configSVG);
     }, [id, configSVG]);
+    const sizeStyle = size ? {
+        width: `${size}px`,
+        height: `${size}px`,
+        ...style,
+    } : style;
     return React.createElement('svg', {
         xmlns,
         className: classnames('svgfont', id, (darkMode && colorDark) ? `${id}-dual` : '', className),
         'aria-hidden': 'true',
+        style: sizeStyle,
         ...props
     }, React.createElement('use', { xlinkHref: `#${id}` }));
 };

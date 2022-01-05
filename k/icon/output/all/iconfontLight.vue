@@ -1,5 +1,5 @@
 <template>
-  <IconFont :icon="icon" :darkMode="false" />
+  <IconFont :icon="icon" :darkMode="false" :size="size" />
 </template>
 <script>
 // @ts-nocheck
@@ -11,6 +11,10 @@ export default {
       type: String,
       required: true,
     },
+    size: {
+      type: Number,
+      default: 0,
+    }
   },
   components: {
     IconFont,
