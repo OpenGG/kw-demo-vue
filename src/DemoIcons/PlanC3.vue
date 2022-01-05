@@ -12,19 +12,22 @@ import {
 </script>
 
 <template>
-    <!--
+  <!--
     size:
       图标尺寸
       可以在 app.css 中统一设好 .svgfont{} 规则
       也可以调用组建时传入 size
-    -->
-    <IconFont icon="common_base_like_24" class="hello" :size="40" />
-    <IconFontLight
-        icon="common_base_like_24"
-        class="hello1"
-        :style="{ color: color_base_black_1 }"
-        :size="30"
-    />
+
+    color:
+      手动设置 color ，会覆盖掉图标本身颜色
+  -->
+  <IconFont icon="common_base_like_24" :size="40" class="hello" />
+  <IconFontLight
+    icon="common_base_like_24"
+    :size="30"
+    :color="color_base_black_1"
+    class="hello1"
+  />
 </template>
 
 

@@ -6,7 +6,7 @@
       `icon-${icon}`,
       darkMode ? `icon-${icon}-dual` : '',
     ]"
-    :style="size ? { fontSize: `${size}px` } : null"
+    :style="[size ? { fontSize: size } : null, color ? { color } : null]"
   >
     <slot />
   </span>
@@ -27,7 +27,11 @@ export default {
       default: true,
     },
     size: {
-      type: Number,
+      type: String,
+      default: 0,
+    },
+    color: {
+      type: String,
       default: 0,
     }
   },
