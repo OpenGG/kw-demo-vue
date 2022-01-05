@@ -6,7 +6,9 @@ import common_base_like_24 from '@ks/kw/icon/output/common/base/common_base_like
 
 // 第二步（可选）：引入颜色
 import '@ks/kwcolor/color/output/all/index.css';
-import * as colors from '@ks/kwcolor/color/output/all/index.v2.js';
+import {
+  color_base_black_1,
+} from '@ks/kwcolor/color/output/all/index.v2.js';
 </script>
 
 <template>
@@ -27,7 +29,7 @@ import * as colors from '@ks/kwcolor/color/output/all/index.v2.js';
   <IconLight
     :config="common_base_like_24"
     :size="30"
-    :color="colors.color_base_black_1"
+    :color="color_base_black_1"
     class="hello1"
   />
 </template>
