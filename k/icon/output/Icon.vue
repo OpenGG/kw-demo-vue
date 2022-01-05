@@ -72,7 +72,7 @@ export default {
       default: true,
     },
     size: {
-      type: String,
+      type: [String, Number],
       default: '',
     },
     color: {

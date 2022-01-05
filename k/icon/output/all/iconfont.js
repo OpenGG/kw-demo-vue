@@ -8,8 +8,8 @@ const iconStyle = (size, color, style) => {
     }
     const res = {};
     if (size) {
-        res.width = size;
-        res.height = size;
+        const s = typeof size === 'number' ? `${size}px` : size;
+        res.fontSize = s;
     }
     if (color) {
         res.color = color;

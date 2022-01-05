@@ -27,12 +27,12 @@ export default {
       default: true,
     },
     size: {
-      type: String,
-      default: 0,
+      type: [String, Number],
+      default: '',
     },
     color: {
       type: String,
-      default: 0,
+      default: '',
     }
   },
 };

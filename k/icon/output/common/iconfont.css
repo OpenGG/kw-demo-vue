@@ -1,9 +1,9 @@
 @font-face {font-family: "common";
-  src: url('iconfont.eot?t=1641386788008'); /* IE9 */
-  src: url('iconfont.eot?t=1641386788008#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1641386788008') format('woff'),
-  url('iconfont.ttf?t=1641386788008') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('iconfont.svg?t=1641386788008#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1641388173059'); /* IE9 */
+  src: url('iconfont.eot?t=1641388173059#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1641388173059') format('woff'),
+  url('iconfont.ttf?t=1641388173059') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1641388173059#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont-common {

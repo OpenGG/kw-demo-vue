@@ -51,8 +51,9 @@ const iconStyle = (size, color, style) => {
     }
     const res = {};
     if (size) {
-        res.width = size;
-        res.height = size;
+        const s = typeof size === 'number' ? `${size}px` : size;
+        res.width = s;
+        res.height = s;
     }
     if (color) {
         res.color = color;

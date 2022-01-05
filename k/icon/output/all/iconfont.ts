@@ -13,24 +13,24 @@ export interface IProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'size'> {
     color?: string
 }
 
-const iconStyle = (size?: string, color?: string, style?: any): any => {
+const iconStyle = (size?: string | number, color?: string, style?: any): any => {
     if (!size && !color) {
-        return style
+      return style
     }
 
     const res = {} as any
 
     if (size) {
-        res.width = size
-        res.height = size
+      const s = typeof size === 'number' ? `${size}px` : size
+      res.fontSize = s
     }
 
     if (color) {
-        res.color = color
+      res.color = color
     }
 
     return Object.assign(res, style)
-}
+  }
 
 const IconFont = ({
     className,

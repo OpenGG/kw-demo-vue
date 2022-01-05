@@ -18,7 +18,7 @@ type IconPngBaseProps = React.HTMLProps<HTMLSpanElement> & React.HTMLProps<HTMLI
 interface IconPngProps extends Omit<IconPngBaseProps, 'size'> {
   config: Icon
   darkMode?: boolean
-  size?: string
+  size?: string | number
   color?: string
 }
 
@@ -26,7 +26,7 @@ interface IconSVGProps extends React.SVGProps<SVGSVGElement> {
   config: Icon
   darkMode?: boolean
   className?: string
-  size?: string
+  size?: string | number
   color?: string
 }
 
@@ -82,7 +82,7 @@ const injectSymbol = (id: string, config: IconConfigSVG) => {
   }
 }
 
-const iconStyle = (size?: string, color?: string, style?: any): any => {
+const iconStyle = (size?: string | number, color?: string, style?: any): any => {
   if (!size && !color) {
     return style
   }
@@ -90,8 +90,9 @@ const iconStyle = (size?: string, color?: string, style?: any): any => {
   const res = {} as any
 
   if (size) {
-    res.width = size
-    res.height = size
+    const s = typeof size === 'number' ? `${size}px` : size
+    res.width = s
+    res.height = s
   }
 
   if (color) {
