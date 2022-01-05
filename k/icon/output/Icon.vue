@@ -6,7 +6,7 @@
     :class="[id, darkMode ? `${id}-dual` : '']"
     aria-hidden="true"
     focusable="false"
-    :style="size ? { width: `${size}px`, height: `${size}px` } : null"
+    :style="[size ? { width: size, height: size } : null, color ? { color } : null]"
   >
     <use :xlink:href="`#${id}`" />
   </svg>
@@ -72,9 +72,13 @@ export default {
       default: true,
     },
     size: {
-      type: Number,
-      default: 0,
+      type: String,
+      default: '',
     },
+    color: {
+      type: String,
+      default: '',
+    }
   },
   computed: {
     id() {

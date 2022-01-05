@@ -15,17 +15,19 @@ type Icon = (number | string)[] // IconConfigSVG | IconConfigPng
 
 type IconPngBaseProps = React.HTMLProps<HTMLSpanElement> & React.HTMLProps<HTMLImageElement>
 
-interface IconPngProps extends IconPngBaseProps {
-  config?: Icon
+interface IconPngProps extends Omit<IconPngBaseProps, 'size'> {
+  config: Icon
   darkMode?: boolean
-  size?: number
+  size?: string
+  color?: string
 }
 
 interface IconSVGProps extends React.SVGProps<SVGSVGElement> {
-  config?: Icon
+  config: Icon
   darkMode?: boolean
   className?: string
-  size?: number
+  size?: string
+  color?: string
 }
 
 export type IconProps = IconSVGProps & IconPngProps
@@ -80,11 +82,31 @@ const injectSymbol = (id: string, config: IconConfigSVG) => {
   }
 }
 
+const iconStyle = (size?: string, color?: string, style?: any): any => {
+  if (!size && !color) {
+    return style
+  }
+
+  const res = {} as any
+
+  if (size) {
+    res.width = size
+    res.height = size
+  }
+
+  if (color) {
+    res.color = color
+  }
+
+  return Object.assign(res, style)
+}
+
 const IconSVG = ({
   config,
   darkMode = true,
   className,
   size,
+  color,
   style,
   ...props
 }: IconSVGProps) => {
@@ -96,18 +118,12 @@ const IconSVG = ({
     injectSymbol(id, configSVG)
   }, [id, configSVG])
 
-  const sizeStyle = size ? {
-    width: `${size}px`,
-    height: `${size}px`,
-    ...style,
-  } : style
-
   return React.createElement(
     'svg', {
     xmlns,
     className: classnames('svgfont', id, (darkMode && colorDark) ? `${id}-dual` : '', className),
     'aria-hidden': 'true',
-    style: sizeStyle,
+    style: iconStyle(size, color, style),
     ...props
   },
     React.createElement(
@@ -121,6 +137,9 @@ const IconPNG = ({
   config,
   darkMode = true,
   className,
+  size,
+  color,
+  style,
   ...props
 }: IconPngProps) => {
   const [, light, dark] = config as IconConfigPng
@@ -143,6 +162,7 @@ const IconPNG = ({
         className: classnames('svgfont', className),
         'aria-hidden': 'true',
         src: light || dark,
+        style: iconStyle(size, color, style),
         ...imgProps
       },
     ),

@@ -6,30 +6,51 @@ import classnames from 'classnames'
 
 type IKey = "common_base_like_24"
 
-export interface IProps extends React.HTMLProps<HTMLSpanElement> {
+export interface IProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'size'> {
     icon: IKey
     darkMode?: Boolean
-    size?: number
+    size?: string
+    color?: string
+}
+
+const iconStyle = (size?: string, color?: string, style?: any): any => {
+    if (!size && !color) {
+        return style
+    }
+
+    const res = {} as any
+
+    if (size) {
+        res.width = size
+        res.height = size
+    }
+
+    if (color) {
+        res.color = color
+    }
+
+    return Object.assign(res, style)
 }
 
 const IconFont = ({
     className,
     icon,
     darkMode = true,
-    size = 0,
+    size,
+    color,
     style,
     ...props
 }: IProps) => React.createElement(
     'span',
     {
         className: classnames(
-            'iconfont-all',
+            'iconfont-common',
             `icon-${icon}`,
             darkMode ? `icon-${icon}-dual` : '',
             className
         ),
         'aria-hidden': 'true',
-        style: size ? { fontSize: `${size}px`, ...style } : style,
+        style: iconStyle(size, color,  style),
         ...props
     }
 )
