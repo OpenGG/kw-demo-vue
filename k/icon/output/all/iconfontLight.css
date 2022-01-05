@@ -1,9 +1,9 @@
 @font-face {font-family: "all";
-  src: url('iconfont.eot?t=1641388173057'); /* IE9 */
-  src: url('iconfont.eot?t=1641388173057#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1641388173057') format('woff'),
-  url('iconfont.ttf?t=1641388173057') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('iconfont.svg?t=1641388173057#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1641395183378'); /* IE9 */
+  src: url('iconfont.eot?t=1641395183378#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1641395183378') format('woff'),
+  url('iconfont.ttf?t=1641395183378') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1641395183378#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont-all {
@@ -18,7 +18,14 @@
   content: "\e000";
 }
 
+.icon-common_base_not_used:before {
+  content: "\e001";
+}
+
 
 .icon-common_base_like_24 {
     color: #000
+}
+.icon-common_base_not_used {
+    color: #abc
 }

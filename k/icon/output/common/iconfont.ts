@@ -4,7 +4,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-type IKey = "common_base_like_24"
+type IKey = "common_base_like_24" | "common_base_not_used"
 
 export interface IProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'size'> {
     icon: IKey

@@ -10,5 +10,8 @@ export default defineConfig({
       '@ks/kw': path.resolve(__dirname, './k'),
       '@ks/kwcolor': path.resolve(__dirname, './k')
     }
+  },
+  build: {
+    outDir: '/tmp/kw-demo-vue'
   }
 });

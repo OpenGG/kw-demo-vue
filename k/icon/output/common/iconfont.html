@@ -66,7 +66,7 @@
 
     .main .logo {
       font-size: 36px;
-      
+
       text-align: left;
       margin-bottom: 30px;
       border-bottom: 1px solid #eee;
@@ -109,7 +109,7 @@
       line-height: 100px;
       font-size: 42px;
       margin: 10px auto;
-      
+
       -webkit-transition: font-size 0.25s linear, width 0.25s linear;
       -moz-transition: font-size 0.25s linear, width 0.25s linear;
       transition: font-size 0.25s linear, width 0.25s linear;
@@ -262,7 +262,7 @@
 
     .markdown>table th {
       white-space: nowrap;
-      
+
       font-weight: 600;
     }
 
@@ -551,6 +551,12 @@
             <div class="code-name">&amp;#xe000;</div>
           </li>
 
+          <li class="dib">
+            <span class="icon iconfont-common">&#xe001;</span>
+            <div class="name">common_base_not_used</div>
+            <div class="code-name">&amp;#xe001;</div>
+          </li>
+
         </ul>
         <div class="article markdown">
           <h2 id="unicode-">Unicode 引用</h2>
@@ -603,6 +609,15 @@
               common_base_like_24
             </div>
             <div class="code-name">.icon-common_base_like_24
+            </div>
+          </li>
+
+          <li class="dib">
+            <span class="icon iconfont-common icon-common_base_not_used"></span>
+            <div class="name">
+              common_base_not_used
+            </div>
+            <div class="code-name">.icon-common_base_not_used
             </div>
           </li>
 
@@ -717,6 +732,5 @@ $(() => {
     })
     const p = [...document.querySelectorAll('p')].find(p => p.textContent.startsWith('使用步骤'))
     $(p).nextAll().remove()
-    $(p).after('<p>参考方案C： <a href="https://docs.corp.kuaishou.com/d/home/fcADEEqBY348voe4Vlw7rvQsk" target="_blank">kid-generate 说明</a></p>')
 })
 </script>

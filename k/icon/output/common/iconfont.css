@@ -1,9 +1,9 @@
 @font-face {font-family: "common";
-  src: url('iconfont.eot?t=1641388173059'); /* IE9 */
-  src: url('iconfont.eot?t=1641388173059#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1641388173059') format('woff'),
-  url('iconfont.ttf?t=1641388173059') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('iconfont.svg?t=1641388173059#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1641395183381'); /* IE9 */
+  src: url('iconfont.eot?t=1641395183381#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1641395183381') format('woff'),
+  url('iconfont.ttf?t=1641395183381') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1641395183381#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont-common {
@@ -18,11 +18,19 @@
   content: "\e000";
 }
 
+.icon-common_base_not_used:before {
+  content: "\e001";
+}
+
 
 .icon-common_base_like_24 {
     color: #000
 }
+.icon-common_base_not_used {
+    color: #abc
+}
 @media (prefers-color-scheme: dark) {
 
     .icon-common_base_like_24-dual { color: #ccc }
+    .icon-common_base_not_used-dual { color: #edf }
 }
