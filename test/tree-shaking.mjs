@@ -3,7 +3,11 @@ import color from 'ansi-colors-es6';
 import fs from 'fs/promises';
 import path from 'path';
 
-const cwd = '/tmp/kw-demo-vue';
+const cwd = process.argv[2]
+
+if (!cwd) {
+    throw new Error('Path not provided')
+}
 
 const keyword = 'not_used';
 

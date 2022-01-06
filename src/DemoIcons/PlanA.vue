@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
 // 第一步：引入图标
 import Icon from '@ks/kw/icon/output/Icon.vue';
 import IconLight from '@ks/kw/icon/output/IconLight.vue';
-import * as icons from '@ks/kw/icon/output/icons.js';
+import * as icons from '@ks/kw/icon/output/icons';
 
 // 第二步（可选）：引入颜色
 import '@ks/kwcolor/color/output/all/index.css';
-import * as colors from '@ks/kwcolor/color/output/all/index.v2.js';
+import * as colors from '@ks/kwcolor/color/output/all/index.v2';
 
 export default {
   common_base_like_24: icons.common_base_like_24,
@@ -16,7 +16,8 @@ export default {
 </script>
 
 <template>
-  <!--
+  <div>
+    <!--
    /*
     * config:
     *   必填
@@ -32,19 +33,24 @@ export default {
     *   手动设置 color ，会覆盖掉图标本身颜色
     */
   -->
-  <Icon :config="$options.common_base_like_24" :size="40" class="hello" />
+    <Icon
+      :config="$options.common_base_like_24"
+      :size="40"
+      class="hello"
+    />
 
-  <IconLight
-    :config="$options.common_base_like_24"
-    :size="30"
-    :color="$options.color_base_black_1"
-    class="hello"
-  />
+    <IconLight
+      :config="$options.common_base_like_24"
+      :size="30"
+      :color="$options.color_base_black_1"
+      class="hello"
+    />
 
-  <IconLight
-    :config="$options.common_base_like_24"
-    class="hello1"
-  />
+    <IconLight
+      :config="$options.common_base_like_24"
+      class="hello1"
+    />
+  </div>
 </template>
 
 <style lang="less" scoped>

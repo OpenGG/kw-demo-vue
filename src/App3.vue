@@ -1,12 +1,12 @@
-
-<script setup>
-import Nav from './components/Nav.vue';
+<script lang="ts" setup>
+import Nav from './components/Nav3.vue';
 import DemoIcons from './DemoIcons/DemoIcons.vue';
 import DemoIcons3 from './DemoIcons/DemoIcons3.vue';
-import DemoColors from './DemoColors/DemoColors.vue';
+import DemoColors from './DemoColors/DemoColors3.vue';
 import { computed, ref } from 'vue';
+import { IAnchor } from './types';
 
-const anchors = [
+const anchors: IAnchor[] = [
   {
     id: 'demoIcons3',
     text: '图标演示 Vue3',
@@ -26,17 +26,24 @@ const anchors = [
 
 const active = ref(anchors[0].id)
 
-const onChange = (id => {
+const onChange = (id: string) => {
   active.value = id
-})
+}
 
-const Element = computed(() => anchors.find(item => item.id === active.value).element)
+const Element = computed(() => {
+  const anchor = anchors.find(item => item.id === active.value) || anchors[0]
+  return anchor.element
+})
 
 </script>
 
 <template>
   <div>
-    <Nav :anchors="anchors" :active="active" @change="onChange" />
+    <Nav
+      :anchors="anchors"
+      :active="active"
+      @change="onChange"
+    />
     <Element />
   </div>
 </template>

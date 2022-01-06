@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 // 第一步：引入图标
 import '@ks/kw/icon/output/all/iconfont.css';
 import IconFont from '@ks/kw/icon/output/all/iconfont.vue';
@@ -6,7 +6,7 @@ import IconFontLight from '@ks/kw/icon/output/all/iconfontLight.vue';
 
 // 第二步（可选）：引入颜色
 import '@ks/kwcolor/color/output/all/index.css';
-import * as colors from '@ks/kwcolor/color/output/all/index.v2.js';
+import * as colors from '@ks/kwcolor/color/output/all/index.v2';
 
 /* 方案C：iconfont 方案，不推荐使用 */
 export default {
@@ -19,7 +19,8 @@ export default {
 </script>
 
 <template>
-  <!--
+  <div>
+    <!--
    /*
     * icon:
     *   必填
@@ -35,17 +36,22 @@ export default {
     *   手动设置 color ，会覆盖掉图标本身颜色
     */
   -->
-  <IconFont icon="common_base_like_24" :size="40" class="hello" />
-  <IconFontLight
-    icon="common_base_like_24"
-    :size="30"
-    :color="$options.color_base_black_1"
-    class="hello"
-  />
-  <IconFontLight
-    icon="common_base_like_24"
-    class="hello1"
-  />
+    <IconFont
+      icon="common_base_like_24"
+      :size="40"
+      class="hello"
+    />
+    <IconFontLight
+      icon="common_base_like_24"
+      :size="30"
+      :color="$options.color_base_black_1"
+      class="hello"
+    />
+    <IconFontLight
+      icon="common_base_like_24"
+      class="hello1"
+    />
+  </div>
 </template>
 
 

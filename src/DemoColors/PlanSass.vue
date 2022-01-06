@@ -1,5 +1,7 @@
 <template>
-  <div class="demo">sass</div>
+  <div class="demo">
+    sass
+  </div>
 </template>
 
 <style scoped lang="sass">

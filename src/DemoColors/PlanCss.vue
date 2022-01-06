@@ -1,5 +1,7 @@
 <template>
-  <div class="demo">css</div>
+  <div class="demo">
+    css
+  </div>
 </template>
 
 <style scoped>

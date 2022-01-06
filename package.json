@@ -5,18 +5,23 @@
   "scripts": {
     "start": "vite",
     "dev": "concurrently vite 'npm run test'",
-    "test": "vite build && node test/tree-shaking.mjs",
+    "test": "npm run lint && npm run build:test && npm run test:tree-shaking",
+    "test:tree-shaking": "node test/tree-shaking.mjs /tmp/vite-test",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "build:test": "vue-tsc --noEmit && vite build --emptyOutDir --outDir /tmp/vite-test",
+    "serve": "vite preview",
+    "lint": "eslint src --ext .js,.ts,.vue"
   },
   "dependencies": {
     "vue": "^3.2.26"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.9.0",
     "@vitejs/plugin-vue": "^2.0.1",
     "ansi-colors-es6": "^5.0.0",
     "concurrently": "^7.0.0",
-    "eslint": "^8.5.0",
+    "eslint": "^8.6.0",
     "eslint-plugin-vue": "^8.2.0",
     "fast-glob": "^3.2.7",
     "less": "^4.1.2",

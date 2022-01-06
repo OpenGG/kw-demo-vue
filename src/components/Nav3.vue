@@ -1,31 +1,29 @@
-<script setup>
-const {
-  anchors,
-  active,
-} = defineProps({
-  anchors: {
-    type: Array,
-    required: true
-  },
-  active: {
-    type: String,
-    required: true
-  }
-})
+<script lang="ts" setup>
+import { IAnchor } from '../types';
 
+const props = defineProps<{
+  anchors: IAnchor[],
+  active: string
+}>()
+
+defineEmits<{
+  (e: 'change', id: string): void
+}>()
 </script>
 
 <template>
   <div class="nav">
     <div
-      class="nav-tab"
-      v-for="anchor in anchors"
+      v-for="anchor in props.anchors"
       :key="anchor.id"
+      class="nav-tab"
       :class="{
         'nav-tab-active': active === anchor.id
       }"
       @click="$emit('change', anchor.id)"
-    >{{ anchor.text }}</div>
+    >
+      {{ anchor.text }}
+    </div>
   </div>
 </template>
 

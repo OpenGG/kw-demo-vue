@@ -1,5 +1,7 @@
 <template>
-  <div class="demo">Less</div>
+  <div class="demo">
+    Less
+  </div>
 </template>
 
 <style scoped lang="less">

@@ -1,19 +1,20 @@
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import PlanA from './PlanA.vue';
 import PlanB from './PlanB.vue';
 import PlanC from './PlanC.vue';
-import PlanCDom from './PlanCDom.ts';
+import PlanCDom from './PlanCDom';
 
-export default {
+export default defineComponent({
   components: {
     PlanA,
     PlanB,
     PlanC
   },
   mounted() {
-    PlanCDom(this.$refs.refDom);
+    PlanCDom(this.$refs.refDom as HTMLElement);
   }
-};
+});
 </script>
 
 <template>

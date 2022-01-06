@@ -6,3 +6,6 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare const $options: any  // for vue2 template usage
