@@ -10,6 +10,7 @@ import * as colors from '@ks/kwcolor/color/output/all/index.v2';
 
 export default {
   common_base_like_24: icons.common_base_like_24,
+  common_base_like_24_png: icons.common_base_like_24_png,
   color_base_black_1: colors.color_base_black_1,
   components: { Icon, IconLight }
 };
@@ -39,8 +40,21 @@ export default {
       class="hello"
     />
 
+    <Icon
+      :config="$options.common_base_like_24_png"
+      :size="40"
+      class="hello"
+    />
+
     <IconLight
       :config="$options.common_base_like_24"
+      :size="30"
+      :color="$options.color_base_black_1"
+      class="hello"
+    />
+
+    <IconLight
+      :config="$options.common_base_like_24_png"
       :size="30"
       :color="$options.color_base_black_1"
       class="hello"
@@ -50,6 +64,11 @@ export default {
       :config="$options.common_base_like_24"
       class="hello1"
     />
+
+    <IconLight
+      :config="$options.common_base_like_24_png"
+      class="hello1"
+    />
   </div>
 </template>
 
@@ -57,12 +76,13 @@ export default {
 @import "@ks/kwcolor/color/output/all/index.less";
 .hello {
   outline: 1px solid @color_base_black_1;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 </style>
 
 <style lang="less" scoped>
 .hello1 {
   outline: 1px solid var(--color_base_black_1);
+  margin-right: 20px;
 }
 </style>

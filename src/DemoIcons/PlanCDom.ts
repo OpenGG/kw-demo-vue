@@ -20,7 +20,16 @@ export default (parent: HTMLElement) => {
     icon-common_base_like_24
     icon-common_base_like_24-dual
   "
-  style="font-size: 40px; margin-right: 40px;"
+  style="font-size: 40px; margin-right: 20px;"
+></span><span
+aria-hidden="true"
+class="
+  hello-world
+  iconfont-all
+  icon-common_base_like_24_png
+  icon-common_base_like_24_png-dual
+"
+style="font-size: 40px; margin-right: 20px;"
 ></span><span
 aria-hidden="true"
 class="
@@ -29,13 +38,30 @@ class="
   icon-common_base_like_24
   icon-common_base_like_24-dual
 "
-style="font-size: 30px; color: var(--color_base_black_1); margin-right: 40px;"
+style="font-size: 30px; color: var(--color_base_black_1); margin-right: 20px;"
+></span><span
+aria-hidden="true"
+class="
+  hello-world
+  iconfont-all
+  icon-common_base_like_24_png
+  icon-common_base_like_24_png-dual
+"
+style="font-size: 30px; color: var(--color_base_black_1); margin-right: 20px;"
 ></span><span
 aria-hidden="true"
 class="
   hello-world
   iconfont-all
   icon-common_base_like_24
+"
+style="margin-right: 20px;"
+></span><span
+aria-hidden="true"
+class="
+  hello-world
+  iconfont-all
+  icon-common_base_like_24_png
 "
 ></span>`;
 

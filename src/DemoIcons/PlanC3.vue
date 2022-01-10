@@ -34,6 +34,11 @@ import {
       :size="40"
       class="hello"
     />
+    <IconFont
+      icon="common_base_like_24_png"
+      :size="40"
+      class="hello"
+    />
     <IconFontLight
       icon="common_base_like_24"
       :size="30"
@@ -41,7 +46,17 @@ import {
       class="hello"
     />
     <IconFontLight
+      icon="common_base_like_24_png"
+      :size="30"
+      :color="color_base_black_1"
+      class="hello"
+    />
+    <IconFontLight
       icon="common_base_like_24"
+      class="hello1"
+    />
+    <IconFontLight
+      icon="common_base_like_24_png"
       class="hello1"
     />
   </div>
@@ -52,12 +67,13 @@ import {
 @import "@ks/kwcolor/color/output/all/index.less";
 .hello {
     outline: 1px solid @color_base_black_1;
-    margin-right: 40px;
+    margin-right: 20px;
 }
 </style>
 
 <style lang="less" scoped>
 .hello1 {
     outline: 1px solid var(--color_base_black_1);
+    margin-right: 20px;
 }
 </style>

@@ -3,6 +3,7 @@
 import Icon from '@ks/kw/icon/output/Icon.vue';
 import IconLight from '@ks/kw/icon/output/IconLight.vue';
 import common_base_like_24 from '@ks/kw/icon/output/common/base/common_base_like_24/index';
+import common_base_like_24_png from '@ks/kw/icon/output/common/base/common_base_like_24_png/index';
 
 // 第二步（可选）：引入颜色
 import '@ks/kwcolor/color/output/all/index.css';
@@ -31,8 +32,21 @@ import {
       :size="40"
     />
 
+    <Icon
+      :config="common_base_like_24_png"
+      class="hello"
+      :size="40"
+    />
+
     <IconLight
       :config="common_base_like_24"
+      :size="30"
+      :color="color_base_black_1"
+      class="hello"
+    />
+
+    <IconLight
+      :config="common_base_like_24_png"
       :size="30"
       :color="color_base_black_1"
       class="hello"
@@ -42,6 +56,11 @@ import {
       :config="common_base_like_24"
       class="hello1"
     />
+
+    <IconLight
+      :config="common_base_like_24_png"
+      class="hello1"
+    />
   </div>
 </template>
 
@@ -49,12 +68,13 @@ import {
 @import "@ks/kwcolor/color/output/all/index.less";
 .hello {
   outline: 1px solid @color_base_black_1;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 </style>
 
 <style lang="less" scoped>
 .hello1 {
   outline: 1px solid var(--color_base_black_1);
+  margin-right: 20px;
 }
 </style>
