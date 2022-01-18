@@ -82,6 +82,13 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'plugin:vue/recommended' // Use this if you are using Vue.js 2.x.
       ],
+    }),
+    merge(defaultConfig, {
+      files: ['*.mjs'],
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+      }
     })
   ]
 };
